@@ -32,14 +32,14 @@ export class AppComponent implements OnInit {
     this.store.dispatch(loadThemesAction());
 
     this.checkOnlineLoggedIn();
-    this.handleNumbers();
+    this.getNumber().subscribe(num => console.info('Output number:', num));
   }
 
   /**
    * Task 3: Output random numbers each 2 seconds
    */
-  handleNumbers() {
-    interval(60000).pipe(
+  getNumber(): Observable<number> {
+    return interval(2000).pipe(
       withLatestFrom(
         interval(500).pipe(
           map(() => this.myNumber$.next(Math.ceil(Math.random() * 1000))),
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
         )
       ),
       map(res => res[1])
-    ).subscribe(num => console.info('Output number:', num));
+    );
   }
 
   /**
