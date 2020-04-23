@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let message of (searchMessages() | async)">
+    <strong>{{ message.author }}</strong>: {{ message.content }}
+  </li>
+</ul>

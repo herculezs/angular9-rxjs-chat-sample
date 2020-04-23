@@ -1,0 +1,18 @@
+[
+  {
+    "name": "light",
+    "properties": {
+      "--color-background": "#ffffff",
+      "--color-text": "#000000",
+      "--font-size": "16px"
+    }
+  },
+  {
+    "name": "dark",
+    "properties": {
+      "--color-background": "#555555",
+      "--color-text": "#ffffff",
+      "--font-size": "18px"
+    }
+  }
+]

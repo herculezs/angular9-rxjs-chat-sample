@@ -1,0 +1,12 @@
+<ng-container *ngIf="(user$ | async) as user">
+  <div *ngIf="user.loggedIn; else loginBlock">
+    Username: {{ user.username }}
+    <button (click)="logout()">Log out</button>
+  </div>
+  <ng-template #loginBlock>
+    <form #form="ngForm" (ngSubmit)="login(form.valid)">
+      <input name="username" #username="ngModel" [(ngModel)]="newUser.username" required>
+      <input type="submit" value="Log in">
+    </form>
+  </ng-template>
+</ng-container>

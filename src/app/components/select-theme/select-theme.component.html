@@ -1,0 +1,7 @@
+<ng-container *ngIf="(themeState$ | async) as themeState">
+  <select [(ngModel)]="selectedIdx" (ngModelChange)="selectTheme(themeState.themes[$event])">
+    <option *ngFor="let theme of themeState.themes; let i = index" [value]="i">
+      {{theme.name}}
+    </option>
+  </select>
+</ng-container>

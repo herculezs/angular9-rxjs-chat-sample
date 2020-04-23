@@ -1,0 +1,8 @@
+Select Theme:
+<app-select-theme></app-select-theme>
+<app-user></app-user>
+<ng-container *ngIf="(isUserLoggedIn$ | async)">
+  <app-search-messages></app-search-messages>
+  <app-message-list></app-message-list>
+  <app-send-message></app-send-message>
+</ng-container>

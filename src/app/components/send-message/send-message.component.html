@@ -1,0 +1,4 @@
+<form #form="ngForm" (ngSubmit)="sendMessage(form.valid)">
+  <textarea name="message" #msg="ngModel" [(ngModel)]="message.content" required></textarea>
+  <button type="submit">Send</button>
+</form>
